@@ -125,4 +125,47 @@ class Image
 	{
 		return $this->_image->writeImage($fileName);
 	}
+
+	/**
+	 * Resize image
+	 *
+	 * Resize image to provided dimensions. If height is null, width is used for
+	 * both, if height is 0, then the resize is proportional. Saves the resized
+	 * image to the provided filename, and reloads the original, unless filename
+	 * is empty then the image is not saved and the resized image is stored in
+	 * the class object.
+	 *
+	 * @param $size array Size of the image, must contain at least width,
+	 * 						if height is not set then width is used for height,
+	 * 						if height is 0, then the resizing is proportional
+	 * @param $height int Height in px
+	 */
+	public function resizeImage(array $size, $filename = "")
+	{
+		if (isset($size["height"]) === false) {
+			$size["height"] = $size["width"];
+		}
+		$image = $this->_image;
+		$status = $this->_image->resizeImage(
+			$size["width"],
+			$size["height"],
+			Imagick::FILTER_LANCZOS
+		);
+		// no need to save the image, just return the resizing status
+		if ($filename === "") {
+			return $status;
+		}
+		// resizing successfull, save image to provided filename
+		if ($status === true) {
+			$this->saveImage($filename);
+			$this->_image = $image;
+			unset($image);
+			return true;
+		} else {
+			// error at resizing
+			$msg = "Image could not be resized.";
+			$code = 3004;
+			throw new Exception($msg, $code);
+		}
+	}
 }
