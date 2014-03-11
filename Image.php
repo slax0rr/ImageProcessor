@@ -140,7 +140,7 @@ class Image
 	 * 						if height is 0, then the resizing is proportional
 	 * @param $height int Height in px
 	 */
-	public function resizeImage(array $size, $filename = "")
+	public function resizeImage(array $size, $blur = 1, $filename = "")
 	{
 		if (isset($size["height"]) === false) {
 			$size["height"] = $size["width"];
@@ -150,7 +150,7 @@ class Image
 			$size["width"],
 			$size["height"],
 			Imagick::FILTER_LANCZOS,
-			0
+			$blur
 		);
 		// no need to save the image, just return the resizing status
 		if ($filename === "") {
