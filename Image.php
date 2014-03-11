@@ -1,5 +1,5 @@
 <?php
-namespace SlaxWeb\ImageProcess;
+namespace SlaxWeb\ImageProcessor;
 
 use \Imagick;
 use \Exception;

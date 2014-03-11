@@ -1,5 +1,5 @@
 <?php
-namespace SlaxWeb\ImageProcess\Config;
+namespace SlaxWeb\ImageProcessor\Config;
 
 /**
  * Configuration for avatars

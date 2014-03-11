@@ -1,5 +1,5 @@
 {
-    "name": "slaxweb/image-process",
+    "name": "slaxweb/image-processor",
     "description": "Image processing",
     "license": "GPLv3",
     "authors": [
@@ -19,8 +19,8 @@
     },
     "autoload": {
         "psr-0": {
-            "SlaxWeb\\ImageProcess": ""
+            "SlaxWeb\\ImageProcessor": ""
         }
     },
-    "target-dir": "SlaxWeb/ImageProcess"
+    "target-dir": "SlaxWeb/ImageProcessor"
 }
