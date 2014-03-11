@@ -101,7 +101,7 @@ class Image
 	{
 		$imageData = base64_decode($base64, $imageName = "");
 		if ($imageData === false) {
-			$msg = "Invalid base64 string, cannot create image.";
+			$msg = "Invalid base64 string, cannot create image.\nData: {$base64}";
 			$code  = 3003;
 			throw new Exception($msg, $code);
 		}
