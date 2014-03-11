@@ -37,10 +37,10 @@ class Image
 	 * Load the configuration, check if the image dir is writable and init the
 	 * imagick object.
 	 *
-	 * @param $config \SlaxWeb\ImageProcess\Config\Image Config object
+	 * @param $config \SlaxWeb\ImageProcessor\Config\Image Config object
 	 */
 	public function __construct(
-		\SlaxWeb\ImageProcess\Config\Image $config = null
+		\SlaxWeb\ImageProcessor\Config\Image $config = null
 	) {
 		if ($config !== null) {
 			$this->setConfig($config);
@@ -56,7 +56,7 @@ class Image
 	 * @param $config \SlaxWeb\ImageProcess\Config\Image Config object
 	 */
 	public function setConfig(
-		\SlaxWeb\ImageProcess\Config\Image $config
+		\SlaxWeb\ImageProcessor\Config\Image $config
 	) {
 		$this->_config = $config;
 
