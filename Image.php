@@ -86,7 +86,7 @@ class Image
 		}
 
 		$this->_image->readImageFile($this->_config->path . $filename);
-		$this->_imageName = $imageName;
+		$this->_imageName = $filename;
 	}
 
 	/**
