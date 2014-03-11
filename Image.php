@@ -149,7 +149,8 @@ class Image
 		$status = $this->_image->resizeImage(
 			$size["width"],
 			$size["height"],
-			Imagick::FILTER_LANCZOS
+			Imagick::FILTER_LANCZOS,
+			0
 		);
 		// no need to save the image, just return the resizing status
 		if ($filename === "") {
