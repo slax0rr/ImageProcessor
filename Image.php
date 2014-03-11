@@ -123,7 +123,7 @@ class Image
 	 */
 	public function saveImage($fileName = null)
 	{
-		return $this->_image->writeImage($fileName);
+		return $this->_image->writeImage($this->_config->path . $fileName);
 	}
 
 	/**
