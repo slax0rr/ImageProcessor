@@ -173,15 +173,15 @@ class Image
 	/**
 	 * Crop image
 	 *
-	 * Proportionaly crops the image, if the original image is 100x100 and crop size
-	 * is 80x80, 10 pixels are removed on each side.
+	 * Crops the image to provided size width the top left corner coordinates
 	 *
 	 * @param $size array Size to which image must be cropped down to
+	 * @param $params array Coordinates of the crop
 	 */
-	public function cropImage(array $size)
-	{
-		// calculate x and y for crop
-		$x = ($this->_image->getImageWidth() - $size["width"]) / 2;
+	public function cropImage(
+		array $size,
+		array $coords = array("x" => 0, "y" => 0)
+	) {
 		$y = ($this->_image->getImageHeight() - $size["height"]) / 2;
 		return $this->_image->cropImage($size["width"], $size["height"], $x, $y);
 	}
