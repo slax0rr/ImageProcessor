@@ -169,4 +169,20 @@ class Image
 			throw new Exception($msg, $code);
 		}
 	}
+
+	/**
+	 * Crop image
+	 *
+	 * Proportionaly crops the image, if the original image is 100x100 and crop size
+	 * is 80x80, 10 pixels are removed on each side.
+	 *
+	 * @param $size array Size to which image must be cropped down to
+	 */
+	public function cropImage(array $size)
+	{
+		// calculate x and y for crop
+		$x = ($this->_image->getImageWidth() - $size["width"]) / 2;
+		$y = ($this->_image->getImageHeight() - $size["height"]) / 2;
+		return $this->_image->cropImage($size["width"], $size["height"], $x, $y);
+	}
 }
