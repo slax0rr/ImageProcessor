@@ -187,10 +187,12 @@ class Image
 
 	/**
 	 * Gets the image size
+	 *
+	 * @return array Image size
 	 */
 	public function getSize()
 	{
-		$size = array(
+		return array(
 			"width"		=>	$this->_image->getImageWidth(),
 			"height"	=>	$this->_image->getImageHeight()
 		);
