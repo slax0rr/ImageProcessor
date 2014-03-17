@@ -147,8 +147,8 @@ class Image
 		}
 		$image = $this->_image;
 		$status = $this->_image->resizeImage(
-			$size["width"],
-			$size["height"],
+			(int)$size["width"],
+			(int)$size["height"],
 			Imagick::FILTER_LANCZOS,
 			$blur
 		);
