@@ -182,7 +182,12 @@ class Image
 		array $size,
 		array $coords = array("x" => 0, "y" => 0)
 	) {
-		return $this->_image->cropImage($size["width"], $size["height"], $x, $y);
+        return $this->_image->cropImage(
+            $size["width"],
+            $size["height"],
+            $coords["x"],
+            $coords["y"]
+        );
 	}
 
 	/**
