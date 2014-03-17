@@ -145,7 +145,7 @@ class Image
 		if (isset($size["height"]) === false) {
 			$size["height"] = $size["width"];
 		}
-		$image = $this->_image;
+		$image = clone $this->_image;
 		$status = $this->_image->resizeImage(
 			(int)$size["width"],
 			(int)$size["height"],
@@ -159,7 +159,7 @@ class Image
 		// resizing successfull, save image to provided filename
 		if ($status === true) {
 			$this->saveImage($filename);
-			$this->_image = $image;
+			$this->_image = clone $image;
 			unset($image);
 			return true;
 		} else {
