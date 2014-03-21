@@ -139,7 +139,8 @@ class Image
 	 * @param $size array Size of the image, must contain at least width,
 	 * 						if height is not set then width is used for height,
 	 * 						if height is 0, then the resizing is proportional
-	 * @param $height int Height in px
+	 * @param $blur int Imagick blur
+	 * @param $filename string If set, the resized image is saved to that filename
 	 */
 	public function resizeImage(array $size, $blur = 1, $filename = "")
 	{
@@ -177,7 +178,7 @@ class Image
 	 * Crops the image to provided size width the top left corner coordinates
 	 *
 	 * @param $size array Size to which image must be cropped down to
-	 * @param $params array Coordinates of the crop
+	 * @param $coords array Coordinates of the crop
 	 */
 	public function cropImage(
 		array $size,
