@@ -85,7 +85,8 @@ class Image
 			throw new Exception($msg, $code);
 		}
 
-		$this->_image->readImageFile($this->_config->path . $filename);
+        $imageHandle = fopen($this->_config->path . $filename, "rb");
+		$this->_image->readImageFile($imageHandle);
 		$this->_imageName = $filename;
 	}
 
